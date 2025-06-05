@@ -281,6 +281,10 @@ class TokenizedProteinDataset(Dataset):
 
     def __getitem__(self, idx):
         row = self.data[int(idx)]
+        print(f"self max length: {self.max_len}")
+        print(row)
+        exit()
+
         max_len = min(self.max_len, row["length"])
 
         struct_tokens = row["struct_seq"]
